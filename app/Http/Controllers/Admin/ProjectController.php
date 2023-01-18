@@ -9,6 +9,8 @@ use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 use App\Models\Language;
+use Illuminate\Support\Facades\Auth;
+
 class ProjectController extends Controller
 {
     /**
@@ -18,7 +20,12 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects =Project::paginate(3);
+        if(Auth::user()->isAdmin()){
+            $projects = Project::paginate(5);
+        } else {
+            $userId = Auth::id();
+            $projects = Project::where('id', $userId)->paginate(5);
+        }
         $types = Type::all();
         return view('admin.projects.index',compact('projects','types'));
     }
