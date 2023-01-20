@@ -14,18 +14,10 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="mb-3">
+                <div class="mb-1">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" id="description" name="description"></textarea>
                 </div>
-                {{-- <div class="mb-3">
-                    <label for="dev_lang" class="form-label">Linguaggi</label>
-                    <input type="text" class="form-control @error('dev_lang') is-invalid @enderror" id="dev_lang"
-                        name="dev_lang">
-                    @error('dev_lang')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div> --}}
                 <div class="mb-3">
                     <label for="framework" class="form-label">Framework</label>
                     <input type="text" class="form-control @error('framework') is-invalid @enderror" id="framework"
@@ -52,7 +44,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="lvl_diff" class="form-label">Difficolta</label>
-                    <input type="number" class="form-control @error('lvl_diff') is-invalid @enderror" id="lvl_diff"
+                    <input type="number" min="1" max="10" class="form-control @error('lvl_diff') is-invalid @enderror" id="lvl_diff"
                         name="lvl_diff">
                     @error('lvl_diff')
                         <div class="invalid-feedback">{{ $message }}</div>

@@ -30,7 +30,7 @@ class StoreProjectRequest extends FormRequest
             'framework' => 'nullable',
             'team' => 'nullable',
             'link_git'=> 'nullable',
-            'lvl_diff' => 'nullable',
+            'lvl_diff' => 'nullable|Integer|max:10|min:1',
             'cover_image' => 'nullable|image|max: 250',
             'type_id'=>'required|exists:types,id'
                 ];

@@ -4,11 +4,9 @@
         <div class="col-4">
             <div class="text-center">
                 <img src="{{ asset('storage/' . $project->cover_image) }}" alt="">
-                {{-- <img src="https://picsum.photos/id/{{$project->id}}/1920/1080" alt=""> --}}
                 <h1>{{ $project->name_project }}</h1>
                 <div>{{ $project->lvl_diff }}</div>
                 <div>{{ $project->slug }}</a></div>
-                {{-- <div>{{$project->dev_lang}}</div> --}}
                 <div>Nome: {{ $project->name }}</div>
                 <td>
                     <ul>
